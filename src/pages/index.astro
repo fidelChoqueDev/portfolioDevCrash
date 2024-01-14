@@ -14,36 +14,15 @@ import myProfile from "../../public/perfilGral.jpg"
 	<header><NavBar /></header>
 	<main>
 		<section class="about">
-			<Image 
-				src={myProfile} 
+			<img
+				src = "../../public/perfilGral.jpg" 
 				alt="profile img" 
 			/>
 			<article>
-				<p> Hi! I'm Fidel Choque Viscarra</p>
+				<p class="text-gradient"> Hi! I'm Fidel Choque Viscarra</p>
 				<Title text="Software Developer from Spain"/>
 				<span>Web and desktop application developer. From Bolivia to Madrid and the world, specialist in unique appliccations</span>
 			</article>
-			<Button message="Si no vale quitar esto" icon="/external-link.svg" link=""/>
-		</section>
-		<section class="skills">
-			<Title text="Skills & Technologies" />
-			<section>
-				<SkillCard 
-					title="Fronted Development"
-					description="Developing website with JavaScript and the best Fameworks lile React, Astro"
-					icon="/public/design.png"
-				/>
-				<SkillCard 
-					title="Backend Development"
-					description="Databases like PostgreSql and MongoDB"
-					icon="/server.svg"
-				/>
-				<SkillCard 
-					title="Automation"
-					description="Automating processes with Pythom"
-					icon="/python.svg"
-				/>
-			</section>
 		</section>
 		<section class="work">
 			<Title text="My Work"/>
@@ -62,6 +41,26 @@ import myProfile from "../../public/perfilGral.jpg"
 					title="My youtube chanel"
 					description="Youtube chanel "
 					link="https://www.youtube.com/"
+				/>
+			</section>
+		</section>
+		<section class="skills">
+			<Title text="Skills & Technologies" />
+			<section>
+				<SkillCard 
+					title="Fronted Development"
+					description="Developing website with JavaScript and the best Fameworks lile React, Astro"
+					icon="/public/design.png"
+				/>
+				<SkillCard 
+					title="Backend Development"
+					description="Databases like PostgreSql and MongoDB"
+					icon="/server.svg"
+				/>
+				<SkillCard 
+					title="Automation"
+					description="Automating processes with Pythom"
+					icon="/python.svg"
 				/>
 			</section>
 		</section>
@@ -85,20 +84,18 @@ import myProfile from "../../public/perfilGral.jpg"
 	
 	.about {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: aliceblue;
-		gap: 40px;
 		width: 100%;
-		height: calc(100vh - 50px);
+		align-items: center;
+		gap: 40px;
 		text-align: center;
+		padding: 0 20%;
 		border-bottom: 1px solid rgb(30, 30, 30, .3);
-		padding: 0 20 px;
+		height: calc(100vh - 50px);
+		color: aliceblue;
 	}
 	.about > img {
-		width: 350px;
-		height: 250px;
+		width: 390px;
+		height: 450px;
 		border-radius: 9999px;
 		object-fit: cover;
 	}
@@ -108,6 +105,15 @@ import myProfile from "../../public/perfilGral.jpg"
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 20%;
+		font-size: xx-large;
 	}
 
 	.skills {
@@ -144,12 +150,13 @@ import myProfile from "../../public/perfilGral.jpg"
 	}
 
 	.contact {
+		background-color: darkgreen;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 50ox;
-		width: 100px;
-		padding: 0px 20px 100px 20px;
+		gap: 10px;
+		width: 400px;
+		padding: 0px 120px 10px 120px;
 	}
 
 	@media screen and (max-width: 700px){
