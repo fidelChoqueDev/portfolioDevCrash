@@ -13,7 +13,7 @@ import myProfile from "../../public/perfilGral.jpg"
 <Layout title="Welcome to Portfolio.">
 	<header><NavBar /></header>
 	<main>
-		<section class="about wrapper">
+		<section class="about">
 			<Image 
 				src={myProfile} 
 				alt="profile img" 
@@ -82,13 +82,7 @@ import myProfile from "../../public/perfilGral.jpg"
 		align-items: center;
 		gap: 100px;
 	}
-	.wrapper{
-		position: relative;
-		width: 66rem;
-		height: 45rem;
-		background: red;
-	}
-
+	
 	.about {
 		display: flex;
 		flex-direction: column;
