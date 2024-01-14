@@ -1,0 +1,36 @@
+---
+const {title, description, icon } = Astro.props
+---
+
+<article class="skill-card">
+    <img src={icon} alt="card icon" />
+    <h1>{title}</h1>
+    <p>{description}</p>
+</article>
+
+<style>
+    .skill-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 260px;
+        height: 210px;
+        background-color: rgb(82, 152, 199);
+        border-radius: 10px;
+        color: brown;
+        padding: 20px;
+    }
+    .skill-card > img {
+        width: 50px;
+    }
+    .skill-card > h3 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .skill-card > p {
+        font-weight: 100;
+        font-size: 14px;
+    }
+</style>

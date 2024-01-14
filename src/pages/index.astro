@@ -1,0 +1,174 @@
+---
+import NavBar from '../components/NavBar.astro';
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import SkillCard from '../components/SkillCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import myProfile from "../../public/perfilGral.jpg"
+---
+
+<Layout title="Welcome to Portfolio.">
+	<header><NavBar /></header>
+	<main>
+		<section class="about wrapper">
+			<Image 
+				src={myProfile} 
+				alt="profile img" 
+			/>
+			<article>
+				<p> Hi! I'm Fidel Choque Viscarra</p>
+				<Title text="Software Developer from Spain"/>
+				<span>Web and desktop application developer. From Bolivia to Madrid and the world, specialist in unique appliccations</span>
+			</article>
+			<Button message="Si no vale quitar esto" icon="/external-link.svg" link=""/>
+		</section>
+		<section class="skills">
+			<Title text="Skills & Technologies" />
+			<section>
+				<SkillCard 
+					title="Fronted Development"
+					description="Developing website with JavaScript and the best Fameworks lile React, Astro"
+					icon="/public/design.png"
+				/>
+				<SkillCard 
+					title="Backend Development"
+					description="Databases like PostgreSql and MongoDB"
+					icon="/server.svg"
+				/>
+				<SkillCard 
+					title="Automation"
+					description="Automating processes with Pythom"
+					icon="/python.svg"
+				/>
+			</section>
+		</section>
+		<section class="work">
+			<Title text="My Work"/>
+			<section>
+				<ProjectCard 
+					title="Markdown web Editor"
+					description="Simple and Minimalist Markdown web editor"
+					link="https://markwriter.tech"
+				/>
+				<ProjectCard 
+					title="My Neovim Setup"
+					description="Neovim setup with lua and packer | Powershell"
+					link="https://github.com/slydragon/dotfiles"
+				/>
+				<ProjectCard 
+					title="My youtube chanel"
+					description="Youtube chanel "
+					link="https://www.youtube.com/"
+				/>
+			</section>
+		</section>
+		<section class="contact">
+			<Title text="Tell me about your next project"/>
+			<Button message="Send Message" icon="/email.svg" link="" />
+		</section>
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 50px auto 0 auto;
+		max-width: 1020px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 100px;
+	}
+	.wrapper{
+		position: relative;
+		width: 66rem;
+		height: 45rem;
+		background: red;
+	}
+
+	.about {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: aliceblue;
+		gap: 40px;
+		width: 100%;
+		height: calc(100vh - 50px);
+		text-align: center;
+		border-bottom: 1px solid rgb(30, 30, 30, .3);
+		padding: 0 20 px;
+	}
+	.about > img {
+		width: 350px;
+		height: 250px;
+		border-radius: 9999px;
+		object-fit: cover;
+	}
+	
+	.about > article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		width: 100%;
+		align-items: center;
+		border-bottom: 1px solid rgb(30, 30, 30, 30, .3);
+		padding: 0px 20px 100px 20px;
+	}
+	.skills > section {
+		display: flex;
+		gap: 40px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.work {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		width: 100%;
+		align-items: center;
+		border-bottom: 1px solid rgb(30, 30, 30, 30, .3);
+		padding: 0px 20px 100px 20px;
+	}
+
+	.work > section {
+		display: flex;
+		gap: 40px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 50ox;
+		width: 100px;
+		padding: 0px 20px 100px 20px;
+	}
+
+	@media screen and (max-width: 700px){
+		main {
+			margin: 0 auto;
+		}
+
+		.about {
+			height: 80 vh;
+		}
+
+		.about > img {
+			width: 100px;
+		}
+	}
+</style>
